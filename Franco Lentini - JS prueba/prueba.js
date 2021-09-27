@@ -1,19 +1,42 @@
-var dios = prompt("Quien es el más grande de todos? Pista: Fue jugador de fútbol.")
+let votosB = parseInt(0);
+let votosR = parseInt(0);
 
+for( let i = 0 ; i < 10 ; i++){
 
+    let votoUsuario = prompt("Que equipo es más grande: Boca(B) O River(R)");
+    
+    if(( votoUsuario == "B") || (votoUsuario == "Boca")){
 
-if ((dios == "Maradona") || (dios == "maradona") || (dios == "diego maradona") || (dios == "Diego Maradona")){
-    alert("Muy bien! El más grande de todos fue y será " + dios + "!");
+        alert("VOTO Boca");
+        votosB = votosB + 1;
+    }
+
+    else if(( votoUsuario == "R") || (votoUsuario == "River")){​
+        alert("VOTO River");
+        votosR = votosR + 1;
+
+    }
+    else{
+        alert("VOTO EN BLANCO");
+    }
 }
-else if ((dios == "Diego") || (dios == "El Diego")){
-    alert("Muy bien! El más grande de todos fue y será " + dios + "!");
-}
-else{
-    alert("No! " + dios + " no es el más grande. El Diego es la única respuesta correcta!" );
-}
 
+if( votosB > votosR){
+        console.log("VOTOS Boca: " + votosB);
+        console.log("VOTOS River: " + votosR);
+        console.log("GANO Boca ");
+    }
+    
+    else if( votosR > votosB){
+    
+        console.log("VOTOS Boca: " + votosB);
+        console.log("VOTOS River: " + votosR);
+        console.log("GANO River ");
 
+    }
+    else{
 
-
-
-
+        console.log("VOTOS Boca: " + votosB);
+        console.log("VOTOS River: " + votosR);
+        console.log("EMPATE");
+    }

@@ -1,68 +1,40 @@
+class Usuario{
+    constructor( company, email, telefono, roleName, diasContrato ){
 
-class autos{
-    constructor( modelo , ID , precio, stock){
-
-        this.modelo = modelo;
-        this.ID = ID;
-        this.precio = precio;
-        this.stock = stock;
+        this.company = company;
+        this.email = email;
+        this.telefono = telefono;
+        this.roleName = roleName;
+        this.diasContrato = diasContrato;
+        
 
 
     }
-
 }
 
+function nuevosDatos() {
 
 
-let modelo = [ "Chevrolet" ,"Ford", "Peugot" , "Audi" ];
-let ID = [ 000 , 001 , 002, 003 ];
-let precio =[750000, 1200000 , 3000000 ,6000000  ];
-let stock = [ 15 , 10 , 7, 5 ];
+    new Usuario( prompt("Ingrese su compañía"), prompt("Ingrese su email"), prompt("Ingrese su numero de telefono"), prompt("Ingrese el nombre del puesto"), parseInt(prompt("Ingrese los dias que se necesita cubrir el rol")));
 
-modelo.push("BMW");
-ID.push(004);
-precio.push(5000000);
-stock.push(3);
-
-let totalPrecio = 0;
-let totalStock = 0;
-
-for (let i = 0; i < precio.length; i++) {
-    totalPrecio += precio[i];
-}
+    localStorage.setItem ("Nuevas Ofertas", JSON.stringify(Usuario))
 
 
-for (let i = 0; i < stock.length; i++) {
-    totalStock += stock[i];
-}
-
-function Inventario (totalPrecio, totalStock) {
-    return totalPrecio * totalStock
-}
-
-let inventarioFinal = Inventario(totalPrecio, totalStock)
-
-
+    if (this.company == "Accenture") {
+        alert("Hola, actualmente trabajo para Accenture y estoy interesado de cambiar de empresa. De todas maneras, agradezco el contacto. Gracias!");
+    }
+    else if (this.company == "") {
+        alert("No he podido registrar tu compañia. Por favor vuelva a ingresar sus datos. Gracias");
+    } 
+    else{
+        alert("Excelente! Estaré procesando la oferta y te contactare a " + this.email + "o a este telefono "+ this.telefono + ". En caso, de que la oferta me interese. Gracias por tu tiempo!");
+    };
 
 
-
-console.log(
-
-    "La concecionaria cuenta con un total de " + totalStock + " autos. Entre ellos encontramos: " + modelo +  ". Donde todos juntos estan valuados en: $" + totalPrecio + ". Por lo que la compañía cuenta con un total de activos de: $" + inventarioFinal + " pesos."
-
-)
-
-let dineroDisponible = prompt("Ingrese su dinero disponible (sin comas y espacios). Nota: Nuestra cartera posee autos de $700,000 a $10,000,000 pesos.")
-
-if(dineroDisponible <= 2000000){
- 
- console.log("Con $" + dineroDisponible + "Puede acceder a nuesta gama Baja de vehiculos! Entre ellos se encuentran " + modelo[0] + ", " + modelo[1] + ". Contactese con nuestros vendedores! ")
-}
-
-else if(dineroDisponible > 2000000 && dineroDisponible <= 3000000){
-    console.log("Con $" + dineroDisponible + "Puede acceder a nuesta gama Media de vehiculos! Entre ellos se encuentran " + modelo[2] + ", " + modelo[4] + ". Contactese con nuestros vendedores! ")
-
-}
-else{
-    console.log("Con $" + dineroDisponible + ". Puede acceder a nuesta gama Alta de vehiculos! Entre ellos se encuentran " + modelo[3] + ". Contactese con nuestros vendedores!")
+    if (this.diasContrato >= 700) {
+        console.log("Actualmente, no me puedo comprometer a " + this.diasContrato + " dias de contrato. Sin embargo, estoy dispuesto a negociar. Te estare contactando a " + this.email + ". Gracias!")
+    }
+    else{
+        console.log("Los dias de la oferta se ajustan a mi busqueda!")
+    }
 }

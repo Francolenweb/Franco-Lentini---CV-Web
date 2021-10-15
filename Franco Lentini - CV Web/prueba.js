@@ -12,15 +12,19 @@ class Usuario{
     }
 }
 
+
+
 function nuevosDatos() {
 
+    
 
     new Usuario( company = prompt("Ingrese su compañía"), email = prompt("Ingrese su email"), telefono = prompt("Ingrese su numero de telefono"), roleName = prompt("Ingrese el nombre del puesto"), diasContrato = parseInt(prompt("Ingrese los dias que se necesita cubrir el rol")));
 
+   
     localStorage.setItem ("Nuevas Ofertas", JSON.stringify(Usuario))
 
-
-    if (this.company == "Accenture") {
+    
+    if ((this.company == "Accenture") && (this.company == "accenture")) {
         alert("Hola, actualmente trabajo para Accenture y estoy interesado de cambiar de empresa. De todas maneras, agradezco el contacto. Gracias!");
     }
     else if (this.company == "") {
@@ -37,7 +41,12 @@ function nuevosDatos() {
     else{
         alert("Los dias de la oferta se ajustan a mi busqueda!")
     }
+
+
+    
 }
 
 
+let nuevoUsuario = nuevosDatos()
 
+console.log(nuevoUsuario)

@@ -15,7 +15,7 @@ class Usuario{
 function nuevosDatos() {
 
 
-    new Usuario( prompt("Ingrese su compañía"), prompt("Ingrese su email"), prompt("Ingrese su numero de telefono"), prompt("Ingrese el nombre del puesto"), parseInt(prompt("Ingrese los dias que se necesita cubrir el rol")));
+    new Usuario( company = prompt("Ingrese su compañía"), email = prompt("Ingrese su email"), telefono = prompt("Ingrese su numero de telefono"), roleName = prompt("Ingrese el nombre del puesto"), diasContrato = parseInt(prompt("Ingrese los dias que se necesita cubrir el rol")));
 
     localStorage.setItem ("Nuevas Ofertas", JSON.stringify(Usuario))
 
@@ -32,10 +32,10 @@ function nuevosDatos() {
 
 
     if (this.diasContrato >= 700) {
-        console.log("Actualmente, no me puedo comprometer a " + this.diasContrato + " dias de contrato. Sin embargo, estoy dispuesto a negociar. Te estare contactando a " + this.email + ". Gracias!")
+        alert("Actualmente, no me puedo comprometer a " + this.diasContrato + " dias de contrato. Sin embargo, estoy dispuesto a negociar. Te estare contactando a " + this.email + ". Gracias!")
     }
     else{
-        console.log("Los dias de la oferta se ajustan a mi busqueda!")
+        alert("Los dias de la oferta se ajustan a mi busqueda!")
     }
 }
 

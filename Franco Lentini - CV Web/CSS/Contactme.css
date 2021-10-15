@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Ephesis&family=Lobster&family=Oswald&family=Roboto+Slab&family=Rubik&display=swap');
+
+
+#navFonts a {
+    font-size: 7vh;
+    font-weight: 900;
+    font-family: 'Bebas Neue', cursive;
+}
+:hover a {
+    color: black;
+}
+
+
+
+#navFonts #Boxes a {
+    font-size: 2vh;
+    font-weight: 600;
+    font-family: 'Krona One', sans-serif;
+}
+
+
+form{
+    margin-top: 50px;
+    
+
+}
+

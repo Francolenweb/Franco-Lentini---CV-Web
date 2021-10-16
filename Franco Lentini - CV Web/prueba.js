@@ -10,9 +10,7 @@ class Usuario{
         
     }
 
-    datosEmpleador (){
-        console.log(this.nombre +this.company + this.email  + this.telefono + this.roleName + this.diasContrato)
-    }
+    
 }
 
 
@@ -23,19 +21,20 @@ function nuevosDatos() {
 
     var usuario1 = new Usuario( nombre = prompt("Ingrese su nombre"),company = prompt("Ingrese su compañía"), email = prompt("Ingrese su email"), telefono = prompt("Ingrese su numero de telefono"), roleName = prompt("Ingrese el nombre del puesto"), diasContrato = parseInt(prompt("Ingrese los dias que se necesita cubrir el rol")));
 
-   
-    const enJSON = JSON.stringify(usuario1)
-    localStorage.setItem ("Nuevas Ofertas", enJSON)
+
+
+    localStorage.setItem ("Nuevas Ofertas", JSON.stringify(usuario1))
 
     
-    if ((this.company == "Accenture") && (this.company == "accenture")) {
+    
+    if ((this.company == "Accenture") ||  (this.company == "accenture")) {
         alert("Hola " + this.nombre +", actualmente trabajo para Accenture y estoy interesado de cambiar de empresa. De todas maneras, agradezco el contacto. Gracias!");
     }
     else if (this.company == "") {
         alert("No he podido registrar tu compañia. Por favor vuelva a ingresar sus datos. Gracias");
     } 
     else{
-        alert("Gracias " + this.nombre + "!. Estaré procesando la oferta y te contactare a " + this.email + "o a este telefono "+ this.telefono + ". En caso, de que la oferta me interese. Gracias por tu tiempo!");
+        alert("Gracias " + this.nombre + "!. Estaré procesando la oferta y te contactare a " + this.email + " o a este telefono "+ this.telefono + " en caso de que la oferta me interese. Gracias por tu tiempo!");
     };
 
 
@@ -46,11 +45,14 @@ function nuevosDatos() {
         alert("Los dias de la oferta se ajustan a mi busqueda!")
     }
 
+    
+
+    return usuario1;
 
     
 }
 
 
-let nuevoUsuario = [nuevosDatos()]
 
-console.log(nuevoUsuario)
+console.log(nuevosDatos());
+

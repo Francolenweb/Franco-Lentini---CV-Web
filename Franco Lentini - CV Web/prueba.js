@@ -15,7 +15,7 @@ class Usuario{
 
 
 
-function nuevosDatos() {
+function nuevosDatos(usuario1) {
 
     
 

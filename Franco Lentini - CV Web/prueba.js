@@ -61,6 +61,10 @@ function nuevosDatos() {
     
 }
 
+// me tira undefined al momento de leerlo en el alert. En el local storage se queda bien los datos
+
+    let nuevoUsuario = document.getElementById("nuevoUsuario");
+    nuevoUsuario.addEventListener("click" , nuevosDatos);
 
 function validar(){
 

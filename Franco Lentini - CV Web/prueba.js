@@ -1,8 +1,9 @@
+
 class Usuario{
     constructor( company, email, telefono, roleName, diasContrato ){
 
     
-        this.company = company;
+        this.company = company; 
         this.email = email;
         this.telefono = telefono;
         this.roleName = roleName;
@@ -14,44 +15,78 @@ class Usuario{
 }
 
 
-    for( let i = 0 ; i < nuevosDatos.length ; i++){
+let ofertas = [];
+    
+// rompi la matrix no funciona mas el array. Se sobrescriben los datos
 
-        let usuarioNuevo = [ usuarioNuevo.value]
+function nuevosDatos(e) {
+        
+    e.preventDefault();
+    
+    let company = document.getElementById("company");
+    let email = document.getElementById("email");
+    let phone = document.getElementById("phone");
+    let role = document.getElementById("role");
+    let contract = document.getElementById("contract");
 
-        console.log(usuarioNuevo)
+
+    
+    let usuario1 = new Usuario ( company.value, email.value , phone.value , role.value , parseInt(contract.value));
+    console.log(usuario1)
+
+    ofertas.push(usuario1)
+
+    localStorage.setItem ("Nuevas Ofertas", JSON.stringify(ofertas))
+
+    
+    // no lee el primer IF
+    
+    if ((company.value == "Accenture") ||  (company.value == "accenture")) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Thanks for the offer! However, I am currently working at Accenture and want to migrate to an another company. Nevertheless, I appreciate your interest in me. Thanks!',
+          })
     }
-
-    
-
-
-function nuevosDatos() {
-
-    
-
-    let usuario1 = new Usuario( company = prompt("Ingrese su compañía"), email = prompt("Ingrese su email"), telefono = prompt("Ingrese su numero de telefono"), roleName = prompt("Ingrese el nombre del puesto"), diasContrato = parseInt(prompt("Ingrese los dias que se necesita cubrir el rol")));
-
-
-
-    localStorage.setItem ("Nuevas Ofertas", JSON.stringify(usuario1))
-
-    
-    
-    if ((this.company == "Accenture") ||  (this.company == "accenture")) {
-        alert("Gracias por la oferta! Sin embargo, actualmente trabajo para Accenture y estoy interesado de cambiar de empresa. De todas maneras, agradezco el contacto. Gracias!");
-    }
-    else if (this.company == "") {
-        alert("No he podido registrar tu compañia. Por favor vuelva a ingresar sus datos. Gracias");
+    else if (company.value == "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please, insert the name of the company',
+            
+          })
     } 
     else{
-        alert("Gracias!. Estaré procesando la oferta y te contactare a " + this.email + " o a este telefono "+ this.telefono + " en caso de que la oferta me interese. Gracias por tu tiempo!");
+        
+        Swal.fire({
+            icon: 'success',
+            title: 'Offer submited successfully!',
+            text: 'Thanks!. I will analyse the offer, and be reaching out to you via email at: ' + email.value + ' or via phone: '+ phone.value + ' for a final decision. Thanks for your time!',
+        
+        })
     };
 
 
-    if (this.diasContrato >= 700) {
-        alert("Actualmente, no me puedo comprometer a " + this.diasContrato + " dias de contrato. Sin embargo, estoy dispuesto a negociar. Te estare contactando a " + this.email + ". Gracias!")
+    if (parseInt(contract.value) >= 700) {
+        
+        Swal.fire({
+            title: 'Let´s talk about it!',
+            text: 'I cannot commit to ' + parseInt(contract.value) + ' days of contract. Nevertheless, I am willing to negotiate. I will be reaching out to you via email. Thanks!',
+            imageUrl: 'Imagenes/negotiate.jpg',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
+          })
     }
     else{
-        alert("Los dias de la oferta se ajustan a mi busqueda!")
+        Swal.fire({
+            title: 'Sweet!',
+            text: 'The contract days adjust to my expectations!',
+            imageUrl: 'Imagenes/ok.png',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
+          })
     }
 
     
@@ -61,53 +96,74 @@ function nuevosDatos() {
     
 }
 
-// me tira undefined al momento de leerlo en el alert. En el local storage se queda bien los datos
 
     let nuevoUsuario = document.getElementById("nuevoUsuario");
     nuevoUsuario.addEventListener("click" , nuevosDatos);
+   
 
-function validar(){
 
-    let nombreUsuario = document.getElementById("nombreUsuario");
+
+
+
+
+function enviado(e) {
+    e.preventDefault();
+
+    let avisoMail = document.getElementById("fotoEnvio");
+    
     
 
-   
-    if( nombreUsuario.value != "" ){
-        let parrafo = document.createElement("p");
-        parrafo.innerHTML = "Bienvenido/a, " + nombreUsuario.value + "!";
-
-        parrafo.style.color = "white";
-        parrafo.style.backgroundColor = "black";
-        parrafo.style.fontSize = "30px";
-        parrafo.style. marginTop = "10px"
-        parrafo.style.fontFamily = "Trebuchet MS";
-        parrafo.style.fontWeight = "700px"
-        parrafo.style.textAlign ="center";
-        console.log( parrafo);
-        let mensaje = document.getElementById("mensaje");
-        mensaje.appendChild( parrafo );
+    if (avisoMail.value != "") {
+        
         
 
-
-
-    }
-    else{
         let parrafo = document.createElement("p");
-        parrafo.innerHTML = "No pudimos registrar su nombre. Vuelva a ingresar su nombre";
+        parrafo.innerHTML = "Email has been sent successfully!";
+        titulo.appendChild(parrafo);
 
-        parrafo.style.color = "white";
-        parrafo.style.backgroundColor = "black";
+        
+        parrafo.style.color = "green";
         parrafo.style.fontSize = "30px";
         parrafo.style. marginTop = "10px"
         parrafo.style.fontFamily = "Trebuchet MS";
         parrafo.style.fontWeight = "700px"
         parrafo.style.textAlign ="center";
-        console.log( parrafo);
-        let mensaje = document.getElementById("mensaje");
-        mensaje.appendChild( parrafo );
+       
+
+        let foto = document.querySelector("img");
+        foto.src = "Imagenes/succesful.jpg";
+        foto.style.width = "150%"
+        foto.style.height = "100%"
+        foto.style.margin = "0px"
+
+        
+
+        
+    }
+    else{
+        
+
+        let parrafo = document.createElement("p");
+        parrafo.innerHTML = "Oh oh! There was an issue on the data provided. Please, try again";
+        titulo.appendChild(parrafo);
+
+        parrafo.style.color = "red";
+        parrafo.style.fontSize = "30px";
+        parrafo.style. marginTop = "10px"
+        parrafo.style.fontFamily = "Trebuchet MS";
+        parrafo.style.fontWeight = "700px"
+        parrafo.style.textAlign ="center";
+
+
+        let foto = document.querySelector("img");
+        foto.src = "Imagenes/error.png";
+        foto.style.width = "100%"
+        foto.style.height = "80%"
+        foto.style.margin = "0px"
     }
 
-
-   
-
 }
+
+
+    let check = document.getElementById("check");
+    check.addEventListener("click" , enviado);

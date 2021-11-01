@@ -16,8 +16,7 @@ class Usuario{
 
 
 let ofertas = [];
-    
-// rompi la matrix no funciona mas el array. Se sobrescriben los datos
+
 
 function nuevosDatos(e) {
         
@@ -32,14 +31,14 @@ function nuevosDatos(e) {
 
     
     let usuario1 = new Usuario ( company.value, email.value , phone.value , role.value , parseInt(contract.value));
-    console.log(usuario1)
+    console.log(usuario1);
 
-    ofertas.push(usuario1)
+    ofertas.push(usuario1);
 
-    localStorage.setItem ("Nuevas Ofertas", JSON.stringify(ofertas))
+    localStorage.setItem ("Nuevas Ofertas", JSON.stringify(ofertas));
 
     
-    // no lee el primer IF
+    
     
     if ((company.value == "Accenture") ||  (company.value == "accenture")) {
         Swal.fire({
@@ -56,19 +55,7 @@ function nuevosDatos(e) {
             
           })
     } 
-    else{
-        
-        Swal.fire({
-            icon: 'success',
-            title: 'Offer submited successfully!',
-            text: 'Thanks!. I will analyse the offer, and be reaching out to you via email at: ' + email.value + ' or via phone: '+ phone.value + ' for a final decision. Thanks for your time!',
-        
-        })
-    };
-
-
-    if (parseInt(contract.value) >= 700) {
-        
+    else if ((parseInt(contract.value) >= 700)) {
         Swal.fire({
             title: 'Let´s talk about it!',
             text: 'I cannot commit to ' + parseInt(contract.value) + ' days of contract. Nevertheless, I am willing to negotiate. I will be reaching out to you via email. Thanks!',
@@ -79,17 +66,22 @@ function nuevosDatos(e) {
           })
     }
     else{
+        
         Swal.fire({
-            title: 'Sweet!',
-            text: 'The contract days adjust to my expectations!',
+            title: 'Offer submited successfully!',
+            text: 'Thanks! I will analyse the offer, and will reach out to you via email at: ' + email.value + ' or via phone: '+ phone.value + ' for a final decision. Thanks for your time!',
             imageUrl: 'Imagenes/ok.png',
             imageWidth: 400,
             imageHeight: 200,
             imageAlt: 'Custom image',
-          })
-    }
+        
+        });
 
-    
+       
+       
+    };
+
+  
 
     return usuario1;
 
@@ -108,12 +100,10 @@ function nuevosDatos(e) {
 
 function enviado(e) {
     e.preventDefault();
-
-    let avisoMail = document.getElementById("fotoEnvio");
     
     
 
-    if (avisoMail.value != "") {
+    if (ofertas.length != 0) {
         
         
 
@@ -167,3 +157,4 @@ function enviado(e) {
 
     let check = document.getElementById("check");
     check.addEventListener("click" , enviado);
+    

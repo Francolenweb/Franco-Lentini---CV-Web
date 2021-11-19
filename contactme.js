@@ -82,6 +82,17 @@ function nuevosDatos(e) {
         let role = document.getElementById("role");
         let contract = document.getElementById("contract");
 
+        
+        $("p#txt").html(' I cannot commit to ' + parseInt(contract.value) +  ' days of contract. Nevertheless, I am willing to negotiate. I will be reaching out to you via email. Thanks!');
+        $("p#txt").css({
+            "color": "red", 
+            "font-size": "40px", 
+            "margintop": "10px", 
+            "font-family": "Trebuchet MS", 
+            "font-weight": "700px", 
+            "text-align": "center"
+        });
+        
         company.value = "";
         email.value = "";
         phone.value = "";
@@ -97,15 +108,7 @@ function nuevosDatos(e) {
         });       
 
 
-        $("p#txt").html(' I cannot commit to ' + parseInt(contract.value) +  ' days of contract. Nevertheless, I am willing to negotiate. I will be reaching out to you via email. Thanks!');
-        $("p#txt").css({
-            "color": "red", 
-            "font-size": "40px", 
-            "margintop": "10px", 
-            "font-family": "Trebuchet MS", 
-            "font-weight": "700px", 
-            "text-align": "center"
-        });
+        
 
        
     }

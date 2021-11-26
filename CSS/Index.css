@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Ephesis&family=Lobster&family=Oswald&family=Roboto+Slab&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Catamaran:wght@800&display=swap');
+
+body{
+    background-image: url(../Imagenes/front\ bg.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#navFonts a {
+    font-size: 7vh;
+    font-family: 'Arvo', serif;
+}
+:hover a {
+    color: black;
+}
+
+#botonFlotante{
+position: fixed;
+bottom: 0px;
+right: 0px;
+margin: 10px;
+}
+
+#navFonts #Boxes a {
+    font-size: 2vh;
+    font-weight: 600;
+    font-family: 'Krona One', sans-serif;
+}
+
+
+#portada2{
+    height: 82vh;
+    width: 10vh;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+li img{
+    width: 20px;
+    height: 20px;
+}
+
+aside ul li{
+    font-weight: 300;
+}
+
+#Obj{
+    margin-right: 10px;
+}
+
+#PI{
+    margin-left: 10px;
+}
+
+#info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+#skillsBg{
+    width: 100%;
+    background-image: url(../Imagenes/skillsbg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+#skillsBg2{
+    background-color: rgba(0, 0, 0, 0.438);
+    padding-left: 50px;
+    text-align: center;
+    justify-content: center;
+}
+
+#Skills{
+    
+    height: 10vh;
+    width: 100%;
+    padding-top: 10px;
+    justify-content: center;
+    scroll-behavior: smooth;
+    
+}
+
+main{
+    overflow: hidden;
+}
+
+h1{
+    font-size: 10vh;
+    font-weight: 900;
+    color: azure;
+    font-family: 'Krona One', sans-serif;
+}
+
+aside h2{
+    font-family: 'Oswald', sans-serif;
+}
+
+aside h6{
+    font-family: 'Rubik', sans-serif;
+}
+section p{
+    font-family: 'Roboto Slab', serif;
+}
+h3{
+    font-size: 4vh;
+    font-weight: 800;
+    color: azure;
+}
+
+.educationBg{
+    width: 100%;
+    background-image: url(../Imagenes/educationbg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+#educationBg2{
+   
+    padding-left: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+#education{
+    display: flex;
+    flex-direction: column;
+    color: azure;
+    margin: 20px 10px;
+    background-color: rgba(0, 0, 0, 0.247);
+    scroll-behavior: smooth;
+}
+
+
+
+#workBg{
+    width: 100%;
+    background-image: url(../Imagenes/workbg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+#workBg2{
+    
+    padding-left: 50px;
+    text-align: center;
+    justify-content: center;
+}
+
+#WorkExperience{
+    display: flex;
+    flex-direction: column;
+    color: azure;
+    margin: 20px 10px;
+    background-color: rgba(0, 0, 0, 0.15);
+    scroll-behavior: smooth;
+}
+
+#bg1{
+    background-color: black;
+    color: whitesmoke;
+    height: 40vh;
+    width: 100%;
+    font-family: 'Lobster', cursive;
+    padding: 50px;
+    text-align: center;
+    text-decoration: solid;
+    font-size: 120px;
+    line-height: 500%;
+    font-weight: 800;
+}
+
+
+
+#bg2{
+    background-color: black;
+    color: whitesmoke;
+    height: 40vh;
+    width: 100%;
+    font-family: 'Dancing Script', cursive;
+    padding: 50px;
+    text-align: center;
+    text-decoration: solid;
+    font-size: 120px;
+    line-height: 500%;
+}
+
+#bg3{
+    background-color: black;
+    color: whitesmoke;
+    height: 40vh;
+    width: 100%;
+    font-family: 'Lobster', cursive;
+    padding: 50px;
+    text-align: center;
+    text-decoration: solid;
+    font-size: 120px;
+    line-height: 500%;
+    font-weight: 800;
+}
